@@ -7,11 +7,18 @@ set(CMAKE_BUILD_TYPE Release)
 find_package(CUDA REQUIRED)
 find_package(OpenCV REQUIRED)
 
+# include_directories(/usr/local/cuda/include)
+# link_directories(/usr/local/cuda/lib64)
+
+# tensorrt
+include_directories(/work/tools/TensorRT-8.0.3.4/include/)
+link_directories(/work/tools/TensorRT-8.0.3.4/lib/)
 
 include_directories(
     ${CUDA_INCLUDE_DIRS}
     ${OpenCV_INCLUDE_DIRS}
     ${PROJECT_SOURCE_DIR}/include
+    "/usr/include/eigen3"
 )
 link_directories(
     /usr/local/cuda/lib64
